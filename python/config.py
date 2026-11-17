@@ -1,10 +1,4 @@
-"""
-config.py
-Todas las constantes del proyecto en un solo lugar.
-IMPORTANTE: los umbrales de abajo deben ser IGUALES a los parametros
-de fpga/src/skin_detector.v y skin_pixel.v, si no el PC y la FPGA
-van a dar respuestas distintas.
-"""
+
 
 # ---------- Imagen ----------
 IMG_W = 400
