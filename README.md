@@ -1,9 +1,10 @@
 # Detector-de-color-de-piel
 **Autores:** Laura Sanabria y Juan Triviño
 
+---
 
 # Declaración de IA
----
+
 
 ## 1. Declaración de Uso y Metodología de Validación
 
@@ -47,6 +48,9 @@ Dado que el enfoque principal del curso es el diseño digital en Verilog, la par
 
 Los autores se comprometen a mantener el dominio técnico y el control sobre la arquitectura y la lógica del proyecto, verificando que todo código generado u optimizado con asistencia de IA esté debidamente revisado, probado y alineado con la estructura base y los criterios de integridad académica y técnica del trabajo.
 
+---
+---
+
 # Conexión de Hardware al PC
 
 El montaje requiere **dos cables USB** conectados al PC (uno por placa) y **tres cables Dupont** entre las placas:
@@ -64,6 +68,7 @@ El montaje requiere **dos cables USB** conectados al PC (uno por placa) y **tres
 | **GND** | $\longleftrightarrow$ | **GND** | Tierra común |
 | **VCC** | $\times$ | *No conectar* | Evita conflictos de alimentación |
 
+---
 ---
 #  Guía de Puesta en Marcha y Pruebas
 
