@@ -1,11 +1,9 @@
 # Detector-de-color-de-piel
-Laura Sanabria y Juan Triviño
+**Autores:** Laura Sanabria y Juan Triviño
 
 
 # Declaración de IA
 
-**Autores:** Juan José Triviño Baquero y Laura Juliana Sanabria  
-**Institución:** Escuela Colombiana de Ingeniería Julio Garavito
 
 ---
 
