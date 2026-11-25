@@ -46,3 +46,29 @@ Dado que el enfoque principal del curso es el diseño digital en Verilog, la par
 ## 5. Compromiso de los Autores
 
 Los autores se comprometen a mantener el dominio técnico y el control sobre la arquitectura y la lógica del proyecto, verificando que todo código generado u optimizado con asistencia de IA esté debidamente revisado, probado y alineado con la estructura base y los criterios de integridad académica y técnica del trabajo.
+
+## Conexión de Hardware al PC
+
+El montaje requiere **dos cables USB** conectados al PC (uno por placa) y **tres cables Dupont** entre las placas:
+
+### Cables USB hacia el PC
+* **Tang Nano 9K → PC:** Cable **USB-C a USB-C** (alimenta la placa y permite cargar el *bitstream* desde Gowin EDA).
+* **FT232R (YP-05) → PC:** Cable **USB-A a mini-USB** (transmite los datos de imagen; genera un puerto serie como `COM5` en Windows o `/dev/ttyUSB0` en Linux/Mac para usar en `--port`).
+
+### Conexión entre placas (UART)
+
+| Pin FT232R (YP-05) | Dirección | Pin Tang Nano 9K | Función |
+| :--- | :---: | :--- | :--- |
+| **TXD** | $\rightarrow$ | **Pin 25** (`uart_rx`) | Envío de píxeles hacia la FPGA |
+| **RXD** | $\leftarrow$ | **Pin 26** (`uart_tx`) | Recepción del resultado desde la FPGA |
+| **GND** | $\longleftrightarrow$ | **GND** | Tierra común |
+| **VCC** | $\times$ | *No conectar* | Evita conflictos de alimentación |
+
+---
+##  Guía de Puesta en Marcha y Pruebas
+
+1. **Prueba solo el Python (sin hardware):** Entra a la carpeta `python`, instala las dependencias con `pip install -r requirements.txt`, genera las imágenes de prueba con `python make_test_images.py` y ejecuta `python main.py ../test_images/piel.png --simulate`. Debe responder **SÍ**, mientras que `sin_piel.png` y `ruido_disperso.png` deben responder **NO**; si esto falla, el problema es de Python y no del hardware.
+2. **Carga la FPGA (Gowin EDA):** Crea un nuevo proyecto con el dispositivo `GW1NR-LV9QN88PC6/I5`, agrega los 5 archivos de `fpga/src/` y el archivo `.cst` asignando `top` como módulo superior, ejecuta *Synthesize* y luego *Place & Route*, y usa *Programmer* para cargar el *bitstream* (en **SRAM** para probar de forma volátil, o en **Flash** para que quede grabado).
+3. **Encuentra el puerto del FT232R:** Ejecuta `python main.py --list-ports` para identificar el puerto serie (por ejemplo, `COM5` en Windows o `/dev/ttyUSB0` en Linux/Mac). Si no aparece, instala el driver FTDI (VCP).
+4. **Prueba el FT232R solo (aislar el módulo):** Desconecta los cables hacia la FPGA, une `TXD` con `RXD` del módulo FT232R con un cable y ejecuta en Python interactivo (a `460800` baudios y ajustando el puerto): `import serial`, `s = serial.Serial("COM5", 460800, timeout=1)` y `s.write(b"hola"); print(s.read(4))`. Debe imprimir `b'hola'`; si es así, el módulo y el driver están bien. Retira el puente y vuelve a conectar a la FPGA.
+5. **La prueba real:** Ejecuta `python main.py ../test_images/piel.png --port COM5 --verify`. Ten paciencia porque enviar 480 000 bytes a 460 800 baudios tarda unos **10 segundos** (no se colgó). Con `piel.png` se espera **SÍ** (con 169 bloques densos y coincidencia con el cálculo por software del PC gracias a `--verify`), con `sin_piel.png` y `ruido_disperso.png` debe dar **NO**, y al final puedes probar con una foto tuya de **400×400**.
