@@ -15,5 +15,6 @@ module skin_pixel (
     wire signed [17:0] cb = (cb_acc >>> 8) + 18'sd128;
     wire signed [17:0] cr = (cr_acc >>> 8) + 18'sd128;
 
-    assign is_skin = (cb >= 18'sd77)  && (cb <= 18'sd127) &&
+    assign is_skin = (cb >= 18'sd77)  && (cb <= 18'sd127) && (cr >= 18'sd133) && (cr <= 18'sd173);
+endmodule
               
