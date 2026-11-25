@@ -39,12 +39,6 @@ Para validar el código asistido por IA a partir de la estructura base estableci
 | `tb_uart_rx.v` | Verilog | *Testbench* para prueba del receptor UART (*RX*). | Evaluación de recepción de bits, *baud rate* y condiciones de borde. |
 | `tb_uart_tx.v` | Verilog | *Testbench* para prueba del transmisor UART (*TX*). | Verificación de tramas transmitidas y temporización frente al diseño base. |
 
-### 3.2. Optimización de código
-
-| Archivo / Módulo | Lenguaje | Optimización / Uso de IA | Verificación realizada |
-| :--- | :--- | :--- | :--- |
-| `[módulo_o_archivo]` | `[Lenguaje]` | Optimización de `[legibilidad / síntesis / eficiencia]` manteniendo la estructura base. | `[Simulación / pruebas / revisión contra diseño base]`. |
-
 ---
 
 ## 4. Compromiso de los Autores
