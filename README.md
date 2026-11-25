@@ -47,7 +47,7 @@ Dado que el enfoque principal del curso es el diseño digital en Verilog, la par
 
 Los autores se comprometen a mantener el dominio técnico y el control sobre la arquitectura y la lógica del proyecto, verificando que todo código generado u optimizado con asistencia de IA esté debidamente revisado, probado y alineado con la estructura base y los criterios de integridad académica y técnica del trabajo.
 
-## Conexión de Hardware al PC
+# Conexión de Hardware al PC
 
 El montaje requiere **dos cables USB** conectados al PC (uno por placa) y **tres cables Dupont** entre las placas:
 
@@ -65,7 +65,7 @@ El montaje requiere **dos cables USB** conectados al PC (uno por placa) y **tres
 | **VCC** | $\times$ | *No conectar* | Evita conflictos de alimentación |
 
 ---
-##  Guía de Puesta en Marcha y Pruebas
+#  Guía de Puesta en Marcha y Pruebas
 
 1. **Prueba solo el Python (sin hardware):** Entra a la carpeta `python`, instala las dependencias con `pip install -r requirements.txt`, genera las imágenes de prueba con `python make_test_images.py` y ejecuta `python main.py ../test_images/piel.png --simulate`. Debe responder **SÍ**, mientras que `sin_piel.png` y `ruido_disperso.png` deben responder **NO**; si esto falla, el problema es de Python y no del hardware.
 2. **Carga la FPGA (Gowin EDA):** Crea un nuevo proyecto con el dispositivo `GW1NR-LV9QN88PC6/I5`, agrega los 5 archivos de `fpga/src/` y el archivo `.cst` asignando `top` como módulo superior, ejecuta *Synthesize* y luego *Place & Route*, y usa *Programmer* para cargar el *bitstream* (en **SRAM** para probar de forma volátil, o en **Flash** para que quede grabado).
