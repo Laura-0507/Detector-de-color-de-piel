@@ -3,7 +3,7 @@
 
 
 # Declaración de IA
-
+---
 
 ## 1. Declaración de Uso y Metodología de Validación
 
