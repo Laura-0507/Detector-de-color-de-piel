@@ -5,8 +5,6 @@
 # Declaración de IA
 
 
----
-
 ## 1. Declaración de Uso y Metodología de Validación
 
 Por medio del presente apartado, los autores declaran que en este proyecto se emplearon herramientas de Inteligencia Artificial (IA) principalmente para la generación de bancos de pruebas (*testbenches*) orientados a la verificación de módulos, y en el resto del desarrollo como apoyo para la **optimización de código**.
@@ -39,6 +37,12 @@ Para validar el código asistido por IA a partir de la estructura base estableci
 
 ---
 
-## 4. Compromiso de los Autores
+## 4. Uso de IA en Código Python
+
+Dado que el enfoque principal del curso es el diseño digital en Verilog, el código en Python no se desarrolló ni se profundizó a fondo. En esta parte, el uso de IA se limitó a apoyar tareas auxiliares y a comprender el funcionamiento general de cada módulo de Python, verificando que su propósito, entradas y salidas cumplieran lo requerido para respaldar el flujo del proyecto sin desviarse del núcleo en Verilog.
+
+---
+
+## 5. Compromiso de los Autores
 
 Los autores se comprometen a mantener el dominio técnico y el control sobre la arquitectura y la lógica del proyecto, verificando que todo código generado u optimizado con asistencia de IA esté debidamente revisado, probado y alineado con la estructura base y los criterios de integridad académica y técnica del trabajo.
