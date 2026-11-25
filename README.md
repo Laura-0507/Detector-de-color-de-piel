@@ -39,7 +39,7 @@ Para validar el código asistido por IA a partir de la estructura base estableci
 
 ## 4. Uso de IA en Código Python
 
-Dado que el enfoque principal del curso es el diseño digital en Verilog, el código en Python no se desarrolló ni se profundizó a fondo. En esta parte, el uso de IA se limitó a apoyar tareas auxiliares y a comprender el funcionamiento general de cada módulo de Python, verificando que su propósito, entradas y salidas cumplieran lo requerido para respaldar el flujo del proyecto sin desviarse del núcleo en Verilog.
+Dado que el enfoque principal del curso es el diseño digital en Verilog, la parte en Python no constituye el núcleo del trabajo y se realizó mayoritariamente con apoyo de IA. El esfuerzo de los autores en este bloque se centró en entender qué hace cada módulo de Python, su rol dentro del flujo general y cómo interactúa con el sistema, comprobando que cumpla su función de apoyo sin desviar la atención del diseño en Verilog.
 
 ---
 
